@@ -13,7 +13,6 @@ Technical Details:
 In this project I used Spring Boot, Spring JPA and in-memory db. 
 The project is in Client/Side architecture. In the front end I use Angular Js as a single page application. The design of frontend is responsive that in mobile browsers, view changes.
 
-
 An Overview of Project:
 In Helping Hands you can explore projects without login. In order to start your project or support a project you have to sign  up and log in to system.
  
