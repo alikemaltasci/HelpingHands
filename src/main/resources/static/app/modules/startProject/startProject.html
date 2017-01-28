@@ -1,0 +1,95 @@
+<section id="startProject">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Start a Project</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<form name="signup" id="contactForm" novalidate>
+					<input type="hidden" ng-model="project.userId">
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Project Name</label> <input type="text"
+								class="form-control" placeholder="Name" id="name"
+								ng-model="project.name" required
+								data-validation-required-message="Please enter project name.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Project Description</label> <input type="text"
+								class="form-control" placeholder="Description" id="description"
+								ng-model="project.description" required
+								data-validation-required-message="Please enter project description.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-6 floating-label-form-group controls">
+							<label>Number Of Needed Supports
+								({{minNumberOfNeededSupports}}-{{maxNumberOfNeededSupports}})</label> <input
+								type="text" class="form-control"
+								placeholder="Number Of Needed Supports ({{minNumberOfNeededSupports}}-{{maxNumberOfNeededSupports}})"
+								id="numberOfNeededSupports" ng-model="numberOfNeededSupports"
+								required
+								data-validation-required-message="Please enter number of Needed Supports">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<br>
+					<h5 ng-show="project.neededSupports">Needed Supports</h5>
+					<div class="row">
+						<div class="row control-group"
+							ng-repeat="support in project.neededSupports">
+							Needed Support - #{{$index+1}}
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Name</label> <input type="text" class="form-control"
+									placeholder="Name" id="name" ng-model="support.name" required
+									data-validation-required-message="Please enter support name.">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Description</label> <input type="text"
+									class="form-control" placeholder="Description" id="description"
+									ng-model="support.description" required
+									data-validation-required-message="Please enter support description">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Amount</label> <input type="text" class="form-control"
+									placeholder="Amount" id="amount" ng-model="support.amount"
+									required
+									data-validation-required-message="Please enter support amount">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Unit</label> <input type="text" class="form-control"
+									placeholder="Unit" id="unit" ng-model="support.unit" required
+									data-validation-required-message="Please enter support unit">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+					</div>
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button type="button" class="btn btn-success btn-lg"
+								ng-click="createProject()">Create Project</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

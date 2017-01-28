@@ -1,0 +1,91 @@
+<section id="explore">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Explore Projects</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="col-sm-4 portfolio-item" ng-repeat="project in projects">
+				<div class="thumbnail">
+					<h3>{{project.name}}</h3>
+					<h4>{{project.description}}</h4>
+					<h5>
+						<u>Needed Supports</u>
+					</h5>
+					<div ng-repeat="neededSupport in project.neededSupports">
+						Needed Support - #{{$index+1}}
+						<h6>{{neededSupport.name}}</h6>
+						<h6>{{neededSupport.description}}</h6>
+						<h6>{{neededSupport.amount}} {{neededSupport.unit}}</h6>
+					</div>
+					<div align="center">
+						<a data-target="#projectDetailModal" class="portfolio-link"
+							ng-click="openProjectDetail(project)" data-toggle="modal"><h3>Support</h3></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="portfolio-modal modal fade" id="projectDetailModal"
+	tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h3>{{selectedProject.name}}</h3>
+						<hr class="star-primary">
+
+
+						<h4>{{selectedProject.description}}</h4>
+						<h5>
+							<u>Needed Supports</u>
+						</h5>
+						<div ng-repeat="neededSupport in selectedProject.neededSupports">
+							Needed Support - #{{$index+1}}
+							<h6>{{neededSupport.name}}</h6>
+							<h6>{{neededSupport.description}}</h6>
+							<h6>{{neededSupport.amount}} {{neededSupport.unit}}</h6>
+							<div
+								class="form-group col-xs-4 floating-label-form-group controls">
+								&nbsp;</div>
+							<div
+								class="form-group col-xs-4 floating-label-form-group controls">
+								<label>Amount</label> <input type="text" class="form-control"
+									placeholder="Amount" id="amount"
+									ng-model="neededSupport.supporting.amount" required
+									data-validation-required-message="Please enter support amount">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="row">
+								<div class="form-group col-xs-4">
+									<button type="button" class="btn btn-success btn-lg"
+										ng-click="giveSupport(neededSupport)">Give Support</button>
+								</div>
+							</div>
+
+						</div>
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<i class="fa fa-times"></i> Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
