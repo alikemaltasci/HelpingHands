@@ -4,7 +4,7 @@ Helping Hands
 Helping Hands is a social Kickstarter like platform. Here you can start your volunteering project or be a supporter to others. In Helping Hands you can support projects with your money, vehicle, building or yourself as a human.
 
 Setting Up Project:
-After extracting project zip file, navigate to the directory of pom.xml in a terminal and then run below command:
+After cloning, navigate to the directory of pom.xml in a terminal and then run below command:
 
 /workspace/HelpingHands$ mvn clean install spring-boot:run
 
