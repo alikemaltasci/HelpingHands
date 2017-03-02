@@ -4,9 +4,13 @@ Helping Hands
 Helping Hands is a social Kickstarter like platform. Here you can start your volunteering project or be a supporter to others. In Helping Hands you can support projects with your money, vehicle, building or yourself as a human.
 
 Setting Up Project:
-After cloning, navigate to the directory of pom.xml in a terminal and then run below command:
+After installing Java8 and Maven, clone the project and navigate to the directory of pom.xml in a terminal and then run below command:
 
 /workspace/HelpingHands$ mvn clean install spring-boot:run
+
+or just install docker and navigate to the directory of pom.xml in a terminal then run below command:
+
+docker-compose up
 
 Technical Details:
 
