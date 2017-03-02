@@ -10,7 +10,7 @@ After installing Java8 and Maven, clone the project and navigate to the director
 
 or just install docker and navigate to the directory of pom.xml in a terminal then run below command:
 
-docker-compose up
+/workspace/HelpingHands$ docker-compose up
 
 Technical Details:
 
