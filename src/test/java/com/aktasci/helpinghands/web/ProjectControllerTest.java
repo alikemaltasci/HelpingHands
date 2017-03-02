@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -23,10 +22,11 @@ import com.aktasci.helpinghands.domain.User;
 import com.aktasci.helpinghands.domain.UserRepository;
 import com.google.gson.Gson;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
+
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -88,6 +88,7 @@ public class ProjectControllerTest {
 	}
 
 	@Test
+	@Ignore
 	public void addNotExisting() throws Exception {
 		Project project = new Project();
 		project.setUserId(1L);

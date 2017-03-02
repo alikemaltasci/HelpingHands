@@ -1,0 +1,18 @@
+  version: "2"
+  
+  services:
+    
+    springapp:
+      build:
+        context: .
+        dockerfile: springapp.dockerfile
+      ports:
+        - "8080:8080"
+      volumes:
+        - .:/vol/app/
+        # in order to prevent maven download dependencies(~85 MB) everytime the service start, 
+        # you should uncomment the below line, 
+        # if you have downloaded maven you can change "~/dev/maven_repo:" part with your repo directory
+        # for exampe: "~/.m2:"
+        
+        #- ~/dev/maven_repo:/root/.m2
