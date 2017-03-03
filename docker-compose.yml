@@ -14,5 +14,5 @@
         # you should uncomment the below line, 
         # if you have downloaded maven, you can change host maven repo with your maven repo directory
         # for exampe: "~/.m2:/root/.m2"
-        
-        #- ~/dev/maven_repo:/root/.m2
+
+        - ~/.m2:/root/.m2
