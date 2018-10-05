@@ -87,21 +87,4 @@ public class ProjectControllerTest {
 				.andExpect(jsonPath("$[0].name", is("Refugee Support")));
 	}
 
-	@Test
-	@Ignore
-	public void addNotExisting() throws Exception {
-		Project project = new Project();
-		project.setUserId(1L);
-		project.setName("Refugee Support2");
-		project.setDescription("Refugee Support desc");
-		project.setNeededSupports(new ArrayList<NeededSupport>());
-
-		Gson gson = new Gson();
-		String json = gson.toJson(project);
-
-		mockMvc.perform(post("/project/").contentType(MediaType.APPLICATION_JSON).content(json))
-				.andExpect(status().isOk());
-
-	}
-
 }

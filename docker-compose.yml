@@ -1,4 +1,4 @@
-  version: "2"
+  version: "3.1"
   
   services:
     
@@ -7,12 +7,12 @@
         context: .
         dockerfile: springapp.dockerfile
       ports:
-        - "8080:8080"
+        - "8090:8080"
       volumes:
         - .:/vol/app/
-        # in order to prevent maven download dependencies(~85 MB) everytime the service start, 
-        # you should uncomment the below line, 
-        # if you have downloaded maven, you can change host maven repo with your maven repo directory
+        # in order to prevent maven download dependencies(~85 MB) everytime the service start,
+        # you should uncomment the below line,
+        # if you have already downloaded maven, you can change host maven repo with your maven repo directory
         # for exampe: "~/.m2:/root/.m2"
 
         - ~/.m2:/root/.m2

@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-MAINTAINER Ali Kemal Tasci <ali_kemal_tasci@yahoo.com>
+LABEL maintainer="Ali Kemal Tasci <ali_kemal_tasci@yahoo.com>"
 
 RUN apt-get update && apt-get -y upgrade && apt-get install -y maven
 
