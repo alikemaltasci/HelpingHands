@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages{
     stage(build){
-      sh "mvn -version"
+      steps {
+        sh "mvn -version"
+      }
     }
   }
 }
